@@ -4,3 +4,11 @@
 		exit('You do not have a config file');
 		// normally send the user tto other page
 	}
+
+	//Our Config is bellow
+	
+
+	//include the database
+	include_once 'classes/db.php';
+
+	$con = DB::getConnection();
