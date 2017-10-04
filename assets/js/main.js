@@ -31,14 +31,19 @@ $(document)
 	// AJAX 
 	$.ajax({
 		type:'POST',
-		url: '../ajax/register.php',
+		url: './ajax/register.php',
 		data:'dataObj',
 		dataType:'json',
 		async: 'true'
 	})
 	.done(function ajaxDone(data){
 		//Whatever data is
-		//console.log(data);
+		console.log(data);
+		if(data.redirect !== undefined){
+			window.location = data.redirect;
+		}
+
+		alert(data.name);
 	})
 	.fail(function ajaxFailed(e){
 		// this failed
